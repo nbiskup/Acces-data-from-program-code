@@ -1,0 +1,12 @@
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\bin\Debug\PPPK_Project.exe.config
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\bin\Debug\PPPK_Project.exe
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\bin\Debug\PPPK_Project.pdb
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\WindowsForms-Project.csproj.AssemblyReference.cache
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\WindowsForms-Project.csproj.SuggestedBindingRedirects.cache
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\PPPK_Project.Login.resources
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\PPPK_Project.MainForm.resources
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\PPPK_Project.Properties.Resources.resources
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\WindowsForms-Project.csproj.GenerateResource.cache
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\WindowsForms-Project.csproj.CoreCompileInputs.cache
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\PPPK_Project.exe
+C:\Users\Nikola\Desktop\Algebra\Treca_godina\PPPK\NikolaBiskup_PPPK_Projekt\PPPK_Project\PPPK_Project\obj\Debug\PPPK_Project.pdb

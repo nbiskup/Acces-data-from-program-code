@@ -1,0 +1,31 @@
+﻿<local:FramedPage x:Class="WPF_Project.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage"
+      Background="{StaticResource GradientBackgroung}">
+
+    <local:FramedPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Padding" Value="0 15"/>
+            <Setter Property="Margin" Value="0 25"/>
+            <Setter Property="Background" Value="Chocolate"/>
+            <Setter Property="Foreground" Value="#EEE"/>
+        </Style>
+    </local:FramedPage.Resources>
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Label  Content="Main Menu" HorizontalAlignment="Center" FontSize="37" Foreground="White" FontFamily="Arial"/>
+        <Button x:Name="BtnCourses" Content="Courses" Click="BtnCourses_Click"              FontSize="18"/>
+        <Button x:Name="BtnStudents" Content="Students" Click="BtnStudents_Click"
+                FontSize="18"/>
+        <Button x:Name="BtnProfessors" Content="Professors" Click="BtnProfessors_Click"
+                FontSize="18"/>
+    </StackPanel>
+</local:FramedPage>
