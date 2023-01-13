@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms-Project", "PPP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-Project", "WPF-Project\WPF-Project.csproj", "{FAF752BF-F625-4ED4-A599-C716F2031A56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos", "Cosmos\Cosmos.csproj", "{18EC4316-993E-4EA3-A509-0F5A11FDE237}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorage", "BlobStorage\BlobStorage.csproj", "{A85DA9CC-BFC4-4AEE-85B7-E0EAEA75DCB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FAF752BF-F625-4ED4-A599-C716F2031A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF752BF-F625-4ED4-A599-C716F2031A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF752BF-F625-4ED4-A599-C716F2031A56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18EC4316-993E-4EA3-A509-0F5A11FDE237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18EC4316-993E-4EA3-A509-0F5A11FDE237}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18EC4316-993E-4EA3-A509-0F5A11FDE237}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18EC4316-993E-4EA3-A509-0F5A11FDE237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A85DA9CC-BFC4-4AEE-85B7-E0EAEA75DCB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85DA9CC-BFC4-4AEE-85B7-E0EAEA75DCB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85DA9CC-BFC4-4AEE-85B7-E0EAEA75DCB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85DA9CC-BFC4-4AEE-85B7-E0EAEA75DCB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
