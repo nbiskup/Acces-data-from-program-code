@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PersonVehicle.Vehicle>
+
+@{
+    ViewBag.Title = "Vehicle";
+}
+
+<h2>Owner</h2>
+
+<p>
+    @Html.ActionLink("Create new vehicle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Vehicles brand
+        </th>
+        <th>
+            Vehicles model
+        </th>
+        <th>
+            Owner's name
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FirstName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDVehicle }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDVehicle }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDVehicle })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="People" EntityType="Model.Person" />
+    <EntitySet Name="Vehicles" EntityType="Model.Vehicle" />
+    <AssociationSet Name="PersonVehicle" Association="Model.PersonVehicle">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <EntitySet Name="Files" EntityType="Model.UploadedFile" />
+    <AssociationSet Name="VehicleUploadedFile" Association="Model.VehicleUploadedFile">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="UploadedFile" EntitySet="Files" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="IDPerson" />
+    </Key>
+    <Property Name="IDPerson" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="20" />
+    <NavigationProperty Name="Vehicles" Relationship="Model.PersonVehicle" FromRole="Person" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="IDVehicle" />
+    </Key>
+    <Property Name="IDVehicle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brand" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="Model" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="Kilometers" Type="Int32" Nullable="false" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="20" />
+    <NavigationProperty Name="Person" Relationship="Model.PersonVehicle" FromRole="Vehicle" ToRole="Person" />
+    <Property Name="PersonIDPerson" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UploadedFiles" Relationship="Model.VehicleUploadedFile" FromRole="Vehicle" ToRole="UploadedFile" />
+  </EntityType>
+  <Association Name="PersonVehicle">
+    <End Type="Model.Person" Role="Person" Multiplicity="1" />
+    <End Type="Model.Vehicle" Role="Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="IDPerson" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="PersonIDPerson" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UploadedFile">
+    <Key>
+      <PropertyRef Name="IDUploadedFile" />
+    </Key>
+    <Property Name="IDUploadedFile" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="ContentType" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="Content" Type="Binary" Nullable="false" />
+    <NavigationProperty Name="Vehicle" Relationship="Model.VehicleUploadedFile" FromRole="UploadedFile" ToRole="Vehicle" />
+    <Property Name="VehicleIDVehicle" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="VehicleUploadedFile">
+    <End Type="Model.Vehicle" Role="Vehicle" Multiplicity="1" />
+    <End Type="Model.UploadedFile" Role="UploadedFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="IDVehicle" />
+      </Principal>
+      <Dependent Role="UploadedFile">
+        <PropertyRef Name="VehicleIDVehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

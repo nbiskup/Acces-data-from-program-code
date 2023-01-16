@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="PersonSet" EntityType="Model.Store.PersonSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehicleSet" EntityType="Model.Store.VehicleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UploadedFiles" EntityType="Model.Store.UploadedFiles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PersonVehicle" Association="Model.Store.PersonVehicle">
+      <End Role="Person" EntitySet="PersonSet" />
+      <End Role="Vehicle" EntitySet="VehicleSet" />
+    </AssociationSet>
+    <AssociationSet Name="VehicleUploadedFile" Association="Model.Store.VehicleUploadedFile">
+      <End Role="Vehicle" EntitySet="VehicleSet" />
+      <End Role="UploadedFile" EntitySet="UploadedFiles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PersonSet">
+    <Key>
+      <PropertyRef Name="IDPerson" />
+    </Key>
+    <Property Name="IDPerson" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="VehicleSet">
+    <Key>
+      <PropertyRef Name="IDVehicle" />
+    </Key>
+    <Property Name="IDVehicle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Kilometers" Type="int" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="PersonIDPerson" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UploadedFiles">
+    <Key>
+      <PropertyRef Name="IDUploadedFile" />
+    </Key>
+    <Property Name="IDUploadedFile" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ContentType" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Content" Type="varbinary(max)" Nullable="false" />
+    <Property Name="VehicleIDVehicle" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PersonVehicle">
+    <End Role="Person" Type="Model.Store.PersonSet" Multiplicity="1" />
+    <End Role="Vehicle" Type="Model.Store.VehicleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="IDPerson" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="PersonIDPerson" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehicleUploadedFile">
+    <End Role="Vehicle" Type="Model.Store.VehicleSet" Multiplicity="1" />
+    <End Role="UploadedFile" Type="Model.Store.UploadedFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="IDVehicle" />
+      </Principal>
+      <Dependent Role="UploadedFile">
+        <PropertyRef Name="VehicleIDVehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
